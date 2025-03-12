@@ -1,0 +1,9 @@
+resources:
+- namespace.yaml
+- mysql-secret.yaml
+- database-pvc.yaml
+- database.yaml
+- backend.yaml
+- frontend.yaml
+- nginx.yaml
+ - ingress.yaml
