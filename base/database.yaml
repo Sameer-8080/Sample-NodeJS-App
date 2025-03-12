@@ -16,23 +16,20 @@ spec:
       containers:
         - name: mysql
           image: mysql:5.7
-          env:
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: MYSQL_ROOT_PASSWORD
-            - name: MYSQL_DATABASE
-              value: "ecommerce"
           ports:
             - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: rootpass
+            - name: MYSQL_DATABASE
+              value: ecommerce
           volumeMounts:
-            - name: db-storage
+            - name: mysql-storage
               mountPath: /var/lib/mysql
       volumes:
-        - name: db-storage
+        - name: mysql-storage
           persistentVolumeClaim:
-            claimName: db-pvc
+            claimName: mysql-pvc
 ---
 apiVersion: v1
 kind: Service
@@ -46,4 +43,4 @@ spec:
     - protocol: TCP
       port: 3306
       targetPort: 3306
-  type: ClusterIP
+  clusterIP: None
