@@ -1,6 +1,5 @@
 resources:
 - namespace.yaml
-- mysql-secret.yaml
 - database-pvc.yaml
 - database.yaml
 - backend.yaml
