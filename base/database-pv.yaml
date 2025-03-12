@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: database-pv
+  name: mysql-pv
   namespace: sample-app
 spec:
   capacity:
