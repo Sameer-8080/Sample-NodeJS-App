@@ -1,5 +1,6 @@
 resources:
 - namespace.yaml
+- database-pv.yaml
 - database-pvc.yaml
 - database.yaml
 - backend.yaml
