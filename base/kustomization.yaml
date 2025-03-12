@@ -6,4 +6,4 @@ resources:
 - backend.yaml
 - frontend.yaml
 - nginx.yaml
- - ingress.yaml
+- ingress.yaml
